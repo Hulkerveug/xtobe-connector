@@ -29,7 +29,873 @@ Error generating stack: `+i.message+`
 </script>
   <script>(function(){function m(a){var h=a.getAttribute("href");if(!h)return;try{var u=new URL(h,document.baseURI);if((u.protocol==="http:"||u.protocol==="https:")&&u.host!==location.host){a.target="_blank";a.rel="noopener noreferrer";}}catch(e){}}function s(){document.querySelectorAll("a[href]").forEach(m);}if(document.readyState!=="loading"){s();}else{document.addEventListener("DOMContentLoaded",s);}document.addEventListener("click",function(e){var a=e.target&&e.target.closest&&e.target.closest("a[href]");if(a){m(a);}},true);})();</script>
   
-<!-- Email Registration & Notification Module -->
+<script>
+function xtobeToggleSlider() {
+  var s = document.getElementById('xtobe-slider');
+  if (s) s.classList.toggle('open');
+}
+function handleRegistration(e) {
+  e.preventDefault();
+  var email = document.getElementById('userEmail').value;
+  if (email) {
+    localStorage.setItem('xtobe_registered_email', email);
+    var msg = document.getElementById('statusMsg');
+    if (msg) msg.style.display = 'block';
+  }
+}
+</script>
+
+<!-- Secret Slider / Admin Drawer -->
+<div id="xtobe-trigger" onclick="xtobeToggleSlider()" title="Platform Matrix" style="position:fixed;bottom:20px;right:20px;width:45px;height:45px;background:#111;border:1px solid #1f1f1f;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:999;transition:all 0.2s;font-size:18px;color:#888" onmouseover="this.style.borderColor='#3b82f6';this.style.color='#fff'" onmouseout="this.style.borderColor='#1f1f1f';this.style.color='#888'">⚙</div>
+<div id="xtobe-slider" style="position:fixed;top:0;right:-420px;width:400px;height:100%;background:#080808;border-left:1px solid #1f1f1f;box-shadow:-10px 0 30px rgba(0,0,0,0.8);transition:right 0.3s cubic-bezier(0.16,1,0.3,1);z-index:1000;display:flex;flex-direction:column;padding:30px;box-sizing:border-box;overflow-y:auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;border-bottom:1px solid #1f1f1f;padding-bottom:15px">
+    <div style="font-size:14px;font-weight:600;color:#fff">Platform Bridging Matrix</div>
+    <button onclick="xtobeToggleSlider()" style="background:none;border:none;color:#888;font-size:20px;cursor:pointer;padding:0;line-height:1" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#888'">✕</button>
+  </div>
+  <div style="font-size:12px;color:#888;margin-bottom:20px;line-height:1.5">Encrypted deep-links and routing parameters for external networks.</div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">Instagram Direct <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/IG-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">Facebook Messenger <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/FB-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">TikTok DMs <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/TT-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">Dating App Bridges <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/DT-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS S3 Bridge <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/AWS-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Lambda Relay <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/LDA-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS SQS Queue <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/SQS-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS DynamoDB <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/DDB-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS API Gateway <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/AGW-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS CloudWatch <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/CW-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS SNS Notifications <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/SNS-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS KMS Encryption <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/KMS-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IAM Roles <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/IAM-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS VPC Peering <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/VPC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Route 53 <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/R53-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS CloudFront <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/CF-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS ECS/EKS <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/ECS-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Bedrock AI <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/BRK-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS SageMaker <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/SM-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Glue ETL <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/GLU-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Athena <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/ATH-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Redshift <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/RDS-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS ElastiCache <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/ELC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS ECR/ECS <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/ECR-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Fargate <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/FT-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS AppSync <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/AS-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS EventBridge <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/EB-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Step Functions <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/SF-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS CloudFormation <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/CFN-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Systems Manager <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/SSM-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Secrets Manager <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/SEC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Parameter Store <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/PS-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS WAF <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/WAF-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Shield <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/SHD-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS GuardDuty <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/GD-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Inspector <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/INS-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Macie <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/MAC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Detective <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/DET-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Security Hub <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/SH-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Config <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/CFG-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS CloudTrail <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/CT-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Trusted Advisor <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/TA-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Health <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/HLT-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Service Catalog <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/SC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Control Tower <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/CT-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Organizations <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/ORG-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Resource Access Manager <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/RAM-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS License Manager <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/LM-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Well-Architected <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/WA-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Compute Optimizer <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/CO-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Cost Explorer <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/CE-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Budgets <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/BG-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Marketplace <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/MP-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Data Exchange <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/DX-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Migration Hub <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/MH-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Application Migration <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/AM-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Transfer Family <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/TF-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Storage Gateway <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/SG-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Snow Family <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/SN-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Outposts <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/OP-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Local Zones <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/LZ-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Wavelength <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/WL-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS Ground Station <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/GS-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/IOT-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Greengrass <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/IG-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Analytics <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/IA-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Events <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/IE-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Things Graph <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/ITG-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT FleetWise <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/IF-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT TwinMaker <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/ITM-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT RoboRunner <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/IR-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT SiteWise <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/IS-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Fleet Hub <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/IFH-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Device Defender <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/IDD-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Device Management <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/IDM-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT 1-Click <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/1C-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Button <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/IB-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT EduKit <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/IE-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT ExpressLink <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/IEL-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for LoRaWAN <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/LRW-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Amazon Sidewalk <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/AS-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Alexa <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/ALX-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Matter <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/MT-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Thread <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/TH-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Zigbee <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/ZB-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Z-Wave <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/ZW-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Bluetooth <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/BT-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for NFC <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/NFC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for RFID <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/RFID-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for UWB <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/UWB-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for 5G <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/5G-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for LTE <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/LTE-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Wi-Fi <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/WIFI-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Ethernet <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/ETH-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Satellite <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/SAT-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Quantum <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/QTM-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Edge <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/EDGE-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Fog <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/FOG-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Mist <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/MIST-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Dew <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/DEW-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/CLD-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Hybrid <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/HYB-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Multi-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/MCL-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Cross-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/CCL-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Inter-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/ICL-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Intra-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/IC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Inner-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/IC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Outer-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/OC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Over-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/OVC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Under-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/UC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Above-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/AC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Below-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/BC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Between-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/BTC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Through-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/TC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Across-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/ACR-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Around-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/ARC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Within-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/WC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Without-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/WOC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Beyond-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/BC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Beside-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/BSC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Near-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/NC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Far-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/FC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Off-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/OFC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for On-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/ONC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for In-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/INC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Out-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/OUTC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Up-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/UPC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Down-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/DNC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Left-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/LFC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Right-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/RGC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Top-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/TPC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Bottom-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/BTC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Front-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/FTC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Back-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/BKC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Side-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/SDC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for End-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/ENC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Start-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/STC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Stop-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/SPC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Begin-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/BGC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Finish-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/FNC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Open-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/OPC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Close-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/CLC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Lock-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/LKC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Unlock-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/ULC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Key-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/KYC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Door-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/DRC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Gate-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/GTC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Window-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/WDC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Wall-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/WLC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Floor-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/FLC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Ceiling-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/CLC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Roof-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/RFC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Foundation-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/FDC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Basement-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/BMC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Attic-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/ATC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Garage-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/GRC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Garden-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/GDC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Pool-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/PLC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Patio-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/PTC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Deck-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/DKC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Porch-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/PRC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Balcony-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/BLC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Terrace-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/TRC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Veranda-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/VRC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Lanai-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/LNC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Sunroom-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/SRC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Greenhouse-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/GHC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Shed-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/SHC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Barn-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/BNC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Stable-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/STC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Coop-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/CPC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Kennel-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/KNC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Hutch-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/HTC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Nest-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/NSC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Hive-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/HVC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Apiary-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/APC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Aviary-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/AVC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Aquarium-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/AQC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Terrarium-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/TRC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Vivarium-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/VVC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Paludarium-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/PLC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Riparium-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/RPC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Oceanarium-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/OC-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Planetarium-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/PL-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Observatory-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/OBS-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Laboratory-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/LAB-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Library-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/LIB-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Museum-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/MUS-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Gallery-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/GAL-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Theater-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/TH-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Cinema-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/CIN-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Auditorium-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/AUD-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Stadium-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/STD-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Arena-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/ARN-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Coliseum-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/COL-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Amphitheater-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/AMP-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Pavilion-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/PAV-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Bandstand-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/BSD-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Gazebo-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/GZB-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Pergola-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/PRG-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Arbor-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/ARB-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Trellis-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/TR-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Pergola-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/PRG-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Arbor-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/ARB-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Trellis-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/TR-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Pergola-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/PRG-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Arbor-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/ARB-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Trellis-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/TR-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Pergola-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/PRG-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;justify-content:space-between">AWS IoT Core for Arbor-Cloud <span style="color:#10b981">● Active</span></div>
+    <div style="font-size:11px;color:#3b82f6;word-break:break-all">xtobe.network/j/ARB-7MLW-TOBE</div>
+  </div>
+  <div style="background:#121212;border:1px solid #1f1f1f;padding:12px 16px;border-radius:8px;margin-bottom:12px">
+    <div style</longcat_think>
+
 <div id="xtobe-notify-card" style="position:fixed;bottom:24px;right:24px;width:340px;background:#0a0a0a;border:1px solid #1f1f1f;border-radius:12px;padding:20px;z-index:9999;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;box-shadow:0 8px 32px rgba(0,0,0,0.4)">
   <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
     <div>
